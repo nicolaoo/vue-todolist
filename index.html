@@ -12,8 +12,30 @@
 <body>
     
     <div id="app">
-        
-        
+        <div class="container mt-3">
+            <h1>
+                Vue To Do List
+            </h1>
+        </div>
+        <div class="container">
+            <div class="row py-4">
+                <input v-model="taskUser" type="text" id="inputPassword5" class="form-control" placeholder="Inserisci le cose da fare.....">
+                <button @click="addTask" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
+            </div>
+            <div class="row">
+                <ul class="list-group">
+                    <li v-for="(element, index) in tasks" 
+                    class="list-group-item">
+                {{ 
+                    element.text
+                }} <br>
+                {{
+                    element.done
+                }}
+                </li>
+                </ul>
+            </div>
+        </div>
         
     </div>
 
