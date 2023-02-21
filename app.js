@@ -20,7 +20,6 @@ createApp({
             ],
 
             taskUser: '',
-            doneTasks: [],
         }
     },
 
@@ -28,7 +27,7 @@ createApp({
         addTask(text) {
             console.log((this.tasks).text)
 
-            (this.tasks).text.push(this.taskUser)
+            this.tasks.push(this.taskUser)
             this.taskskUser = ''
         },
 
