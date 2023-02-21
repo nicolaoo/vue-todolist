@@ -30,5 +30,9 @@ createApp({
             this.tasks.push(this.taskUser)
             this.taskskUser = ''
         },
+
+        removeTasks() {
+
+        },
     },
 }).mount('#app')
