@@ -7,32 +7,34 @@ createApp({
             tasks:[
                 {
                     text: 'una stringa che indica il testo del todo',
-                    done: 'un booleano (true/false) che indica se il todo è stato fatto oppure no'
+                    done: '',
                 },
                 {
                     text: 'una stringa che indica il testo del todo',
-                    done: 'un booleano (true/false) che indica se il todo è stato fatto oppure no'
+                    done: ''
                 },
                 {
                     text: 'una stringa che indica il testo del todo',
-                    done: 'un booleano (true/false) che indica se il todo è stato fatto oppure no'
+                    done: ''
                 },
             ],
 
-            taskUser: ''
+            taskUser: '',
+            doneTasks: [],
         }
     },
 
     methods:{
-        addTask() {
-            console.log(this.tasks, this.taskUser)
+        addTask(text) {
+            console.log((this.tasks).text)
 
-            this.tasks.push(this.taskUser)
+            (this.tasks).text.push(this.taskUser)
             this.taskskUser = ''
         },
 
-        removeTasks() {
-
+        removeTasks(remove) {
+            this.tasks.splice(remove, 1)
         },
+
     },
 }).mount('#app')

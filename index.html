@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Vue To Do List</title>
 </head>
-<body>
+<body class="bg-primary">
     
     <div id="app">
-        <div class="container mt-3">
+        <div class="container mt-3 text-center">
             <h1>
                 Vue To Do List
             </h1>
@@ -21,21 +21,30 @@
         <div class="container">
             <div class="row py-4">
                 <input v-model="taskUser" type="text" id="inputPassword5" class="form-control" placeholder="Inserisci le cose da fare.....">
-                <button @click="addTask" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
+                <button @click="addTask(element)" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
             </div>
             <div class="row">
-                <ul class="list-group">
-                    <li v-for="(element, index) in tasks" 
-                    class="list-group-item d-flex justify-content-between">
-                        {{ 
-                            element.text
-                        }} <br>
-                        {{
-                            element.done
-                        }}
-                        <button @click="removeTasks" type="button" class="btn btn-danger">
+                <ul v-for="(element, index) in tasks" class="list-group">
+                    <li class="flex-wrap align-items-center list-group-item d-flex justify-content-between">
+                        <div >
+                            {{ 
+                                element.text
+                            }} 
+                        </div> 
+                        <i class="text-success fa-solid fa-check"></i>
+                        <button @click="removeTasks(index)" type="button" class="btn btn-danger">
                             <i class="fa-solid fa-trash "></i>
                         </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-6 my-3 m-auto row">
+                <ul v-for="(element, index) in tasks" class="list-group">
+                    <li class="list-group-item">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     </li>
                 </ul>
             </div>
