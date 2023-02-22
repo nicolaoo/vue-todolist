@@ -6,15 +6,15 @@ createApp({
         return{
             tasks:[
                 {
-                    text: 'una stringa che indica il testo del todo',
+                    text: 'portare fuori il cane',
                     done: false,
                 },
                 {
-                    text: 'una stringa che indica il testo del todo',
+                    text: 'andare a calcio',
                     done: false
                 },
                 {
-                    text: 'una stringa che indica il testo del todo',
+                    text: 'portare i bambini a scuola',
                     done: true
                 },
             ],

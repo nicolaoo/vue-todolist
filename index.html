@@ -20,11 +20,11 @@
         </div>
         <div class="container">
             <div class="row py-4">
-                <input v-model="taskUser" type="text" id="inputPassword5" class="form-control" placeholder="Inserisci le cose da fare.....">
-                <button @click="addTask()" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
+                <input @keyup.enter="addTask" v-model="taskUser" type="text" id="inputPassword5" class="form-control" placeholder="Inserisci le cose da fare.....">
+                <button @click="addTask" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
             </div>
             <div class="row">
-                <ul class="list-group">
+                <ul class="col-8 m-auto list-group">
                     <li 
                     v-for="(element, index) in tasks " 
                     class="flex-wrap align-items-center list-group-item 
