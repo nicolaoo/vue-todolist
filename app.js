@@ -7,15 +7,15 @@ createApp({
             tasks:[
                 {
                     text: 'una stringa che indica il testo del todo',
-                    done: '',
+                    done: false,
                 },
                 {
                     text: 'una stringa che indica il testo del todo',
-                    done: ''
+                    done: false
                 },
                 {
                     text: 'una stringa che indica il testo del todo',
-                    done: ''
+                    done: true
                 },
             ],
 
@@ -24,11 +24,18 @@ createApp({
     },
 
     methods:{
-        addTask(text) {
-            console.log((this.tasks).text)
+        addTask() {
+            if(this.taskUser === '') {
+                return
+            }
 
-            this.tasks.push(this.taskUser)
-            this.taskskUser = ''
+            const newTask = {
+                text: this.taskUser,
+                done: false,
+            }
+
+            this.tasks.push(newTask)
+            taskskUser = ''
         },
 
         removeTasks(remove) {

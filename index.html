@@ -21,17 +21,22 @@
         <div class="container">
             <div class="row py-4">
                 <input v-model="taskUser" type="text" id="inputPassword5" class="form-control" placeholder="Inserisci le cose da fare.....">
-                <button @click="addTask(element)" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
+                <button @click="addTask()" type="button" class="btn btn-success col-2 mt-3 m-auto">Add tasks</button>
             </div>
             <div class="row">
-                <ul v-for="(element, index) in tasks" class="list-group">
-                    <li class="flex-wrap align-items-center list-group-item d-flex justify-content-between">
-                        <div >
+                <ul class="list-group">
+                    <li 
+                    v-for="(element, index) in tasks " 
+                    class="flex-wrap align-items-center list-group-item 
+                    d-flex justify-content-between">
+
+                        <span :class="element.done ? 'text-decoretion-line' : '' ">
+
                             {{ 
                                 element.text
                             }} 
-                        </div> 
-                        <i class="text-success fa-solid fa-check"></i>
+                        </span>
+                            
                         <button @click="removeTasks(index)" type="button" class="btn btn-danger">
                             <i class="fa-solid fa-trash "></i>
                         </button>
@@ -40,7 +45,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <!-- <div class="container">
             <div class="col-6 my-3 m-auto row">
                 <ul v-for="(element, index) in tasks" class="list-group">
                     <li class="list-group-item">
@@ -50,7 +55,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         
     </div>
 
