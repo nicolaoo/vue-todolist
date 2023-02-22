@@ -25,7 +25,9 @@ createApp({
 
     methods:{
         addTask() {
-            if(this.taskUser === '') {
+            let text = this.taskUser.trim()
+            if(text === '') {
+                this.taskUser = ''
                 return
             }
 
@@ -35,7 +37,7 @@ createApp({
             }
 
             this.tasks.push(newTask)
-            taskskUser = ''
+            this.taskUser = ''
         },
 
         removeTasks(remove) {

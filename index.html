@@ -28,10 +28,10 @@
                     <li 
                     v-for="(element, index) in tasks " 
                     class="flex-wrap align-items-center list-group-item 
-                    d-flex justify-content-between">
+                    d-flex">
+                        <input class="me-2" type="checkbox" v-model="element.done" >
 
-                        <span :class="element.done ? 'text-decoretion-line' : '' ">
-
+                        <span class="me-auto" :class="element.done ? 'text-decoretion-line' : '' ">
                             {{ 
                                 element.text
                             }} 
